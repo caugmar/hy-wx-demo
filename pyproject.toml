@@ -29,5 +29,4 @@ cmd = "hy src/hy_wx_demo/demo.hy"
 [dependency-groups]
 dev = [
     "poethepoet (>=0.44.0,<0.45.0)",
-    "briefcase (>=0.4.1,<0.5.0)"
 ]
