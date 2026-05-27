@@ -30,3 +30,7 @@ wheels/
 # Logs de erro e runtime
 *.log
 
+# Build da AppImage
+*.AppImage
+appimage-build
+
