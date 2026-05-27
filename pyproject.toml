@@ -25,8 +25,21 @@ build-backend = "poetry.core.masonry.api"
 help = "Roda o programa principal"
 cmd = "hy src/hy_wx_demo/demo.hy"
 
+[tool.poe.tasks.clean]
+help = "Remove os artefatos de compilação"
+cmd = "rm -rf appimage-build/ build/ dist/ AppDir/usr/bin/* *.AppImage"
+
+[tool.poe.tasks.build]
+help = "Cria a AppImage do projeto"
+shell = """
+    pyinstaller hy-wx-demo.spec
+    cp -rv dist/HyWxDemo/* AppDir/usr/bin/ 
+    appimage-builder
+"""
 
 [dependency-groups]
 dev = [
     "poethepoet (>=0.44.0,<0.45.0)",
+    "appimage-builder (>=1.1.0,<2.0.0)",
+    "pyinstaller (>=6.20.0,<7.0.0)",
 ]

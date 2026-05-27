@@ -1,0 +1,21 @@
+version: 1
+
+AppDir:
+  path: ./AppDir
+
+  app_info:
+    id: hywxdemo
+    name: HyWxDemo
+    icon: hywxdemo
+    version: "1.0"
+    exec: usr/bin/HyWxDemo
+    exec_args: $@
+
+  runtime:
+    env:
+      PYTHONHOME: '${APPDIR}/usr/bin/_internal'
+      PYTHONPATH: '${APPDIR}/usr/bin/_internal'
+
+AppImage:
+  arch: x86_64
+
