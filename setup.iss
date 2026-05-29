@@ -6,7 +6,7 @@ DefaultGroupName=Hy Wx Demo
 UninstallDisplayIcon={app}\runtime\Scripts\hy.exe
 Compression=lzma2
 SolidCompression=yes
-OutputDir=userdocs:Inno Setup Outputs
+OutputDir=.
 OutputBaseFilename=Instalador_Hy_Wx_Demo
 
 ; --- Captura dinâmica do ambiente virtual do Poetry ---

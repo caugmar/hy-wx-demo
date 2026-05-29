@@ -29,13 +29,23 @@ cmd = "hy src/hy_wx_demo/demo.hy"
 help = "Remove os artefatos de compilação"
 cmd = "rm -rf appimage-build/ build/ dist/ AppDir/usr/bin/* *.AppImage"
 
-[tool.poe.tasks.build]
+[tool.poe.tasks.appimage]
 help = "Cria a AppImage do projeto"
 shell = """
     pyinstaller hy-wx-demo.spec
     cp -rv dist/HyWxDemo/* AppDir/usr/bin/ 
     appimage-builder
 """
+
+[tool.poe.tasks.winstaller]
+help = "Gera um instalador para Windows"
+shell = "Start-Process \"$env:USERPROFILE\\AppData\\Local\\Programs\\Inno Setup 6\\ISCC.exe\" -ArgumentList \".\\setup.iss\" -NoNewWindow -Wait"
+interpreter = "powershell"
+
+[tool.poe.tasks.winclean]
+help = "Remove os artefatos de compilação NO WINDOWS"
+shell = "Remove-Item -Path .\\*.exe -Force -ErrorAction SilentlyContinue"
+interpreter = "powershell"
 
 [dependency-groups]
 dev = [

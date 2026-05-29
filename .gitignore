@@ -7,7 +7,7 @@ __pycache__/
 # Arquivos específicos do Hy
 .hyc/
 
-# Distribuição / Empacotamento (PyInstaller)
+# Distribuição / Empacotamento (PyInstaller / AppImage / Inno Setup)
 bin/
 build/
 develop-eggs/
@@ -26,11 +26,13 @@ wheels/
 *.egg
 *.manifest
 *.spec
+*.AppImage
+appimage-build
+AppDir/.DirIcon
+AppDir/AppRun
+AppDir/AppRun.env
+*.exe
 
 # Logs de erro e runtime
 *.log
-
-# Build da AppImage
-*.AppImage
-appimage-build
 
